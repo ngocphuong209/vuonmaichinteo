@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thông Tin Tài Khoản</title>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <style>
+        body {
+            background: linear-gradient(to right, #e0f7fa, #80deea);
+            /* Gradient background */
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            color: #333;
+        }
+
+        .header {
+            background-color: #004d40;
+            /* Darker green */
+            color: #fff;
+            padding: 15px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header-content a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            margin-right: 20px;
+            transition: color 0.3s;
+        }
+
+        .header-content a:hover {
+            color: #b2dfdb;
+            /* Light green on hover */
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+
+        .account-info h2,
+        .contact-info h2 {
+            color: #004d40;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .account-info p,
+        .contact-info label {
+            font-size: 18px;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        .contact-info label {
+            font-weight: 600;
+            color: #004d40;
+        }
+
+        .contact-info input {
+            width: calc(100% - 22px);
+            /* Adjusted width */
+            padding: 12px;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        .contact-info button {
+            background-color: #004d40;
+            color: #ffffff;
+            border: none;
+            padding: 14px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: background-color 0.3s, transform 0.2s;
+            width: 100%;
+        }
+
+        .contact-info button:hover {
+            background-color: #00332e;
+            transform: translateY(-2px);
+        }
+
+        .edit-button {
+            background-color: #ff5722;
+            /* Orange */
+            color: #ffffff;
+            border: none;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: background-color 0.3s;
+        }
+
+        .edit-button:hover {
+            background-color: #e64a19;
+        }
+
+        .popup {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popup-content {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            animation: fadeIn 0.5s;
+            position: relative;
+            max-width: 500px;
+            width: 90%;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            font-size: 26px;
+            color: #004d40;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .popup-content h2 {
+            color: #00796b;
+            margin-bottom: 15px;
+        }
+
+        .popup-content p {
+            color: #555;
+        }
+
+        .hamburger-menu {
+            font-size: 30px;
+            cursor: pointer;
+            position: fixed;
+            top: 15px;
+            right: 20px;
+            z-index: 1000;
+            color: #00332e;
+            background-color: #eee;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .menu-options {
+            display: none;
+            position: fixed;
+            top: 50px;
+            right: 20px;
+            background-color: #004d40;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 999;
+            padding: 10px;
+        }
+
+        .menu-options a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .menu-options a:hover {
+            background-color: #00796b;
+        }
+
+
+        .back-button {
+            background-color: #004d40;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .back-button:hover {
+            background-color: #00332e;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="header-content">
+            <a href="index.html">Trang Chủ</a>
+            <a href="tintuc.html">Tin Tức</a>
+            <span id="headerUsername">Người dùng</span>
+            <span id="headerAccountBalance">$0</span>
+        </div>
+    </div>
+
+    <div class="hamburger-menu" onclick="toggleMenu()">
+        &#9776;
+    </div>
+
+    <div id="menuOptions" class="menu-options" style="display: none;">
+        <a href="#" onclick="showSection('lichSuGiaoDich')">Lịch sử giao dịch</a>
+        <a href="#" onclick="showSection('thongKeGiaoDich')">Thống kê giao dịch</a>
+        <a href="#" onclick="showSection('maCoupon')">Mã coupon</a>
+    </div>
+
+    <div id="lichSuGiaoDich" class="container" style="display: none;">
+        <button class="back-button" onclick="goBack()">← Quay lại</button>
+        <h2>Lịch sử giao dịch</h2>
+        <table id="transactionHistory" style="width: 100%; border-collapse: collapse;">
+            <thead>
+                <tr>
+                    <th>Ngày</th>
+                    <th>Loại giao dịch</th>
+                    <th>Số tiền</th>
+                    <th>Mô tả</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="4" style="text-align: center;">Chưa có dữ liệu</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    <div id="thongKeGiaoDich" class="container" style="display: none;">
+        <button class="back-button" onclick="goBack()">← Quay lại</button>
+        <h2>Thống kê giao dịch</h2>
+        <div id="transactionStats">
+            <p id="totalIncome">Tổng thu nhập: Chưa có dữ liệu</p>
+            <p id="totalExpenditure">Tổng chi tiêu: Chưa có dữ liệu</p>
+            <p id="netBalance">Số dư còn lại: Chưa có dữ liệu</p>
+        </div>
+    </div>
+
+
+    <div id="maCoupon" class="container" style="display: none;">
+        <button class="back-button" onclick="goBack()">← Quay lại</button>
+        <h2>Mã Coupon</h2>
+        <table id="couponCodes" style="width: 100%; border-collapse: collapse;">
+            <thead>
+                <tr>
+                    <th>Mã coupon</th>
+                    <th>Giá trị</th>
+                    <th>Ngày hết hạn</th>
+                    <th>Trạng thái</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="4" style="text-align: center;">Chưa có dữ liệu</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+
+
+
+    <div class="container">
+        <div class="account-info">
+            <h2>THÔNG TIN TÀI KHOẢN</h2>
+            <p>ID của bạn: <span id="userId">Loading...</span></p>
+            <p>Tên tài khoản: <span id="username">Loading...</span></p>
+            <p>Số dư tài khoản: <span id="accountBalance">Loading...</span> VNĐ</p>
+            <p>Số dư ATMcoin: <span id="acoinBalance">Loading...</span></p>
+            <p>Số dư tiền khuyến mãi: <span id="promoBalance">Loading...</span></p>
+        </div>
+        <div class="contact-info">
+            <h2>THÔNG TIN LIÊN HỆ</h2>
+            <label for="phone">Số điện thoại:</label>
+            <input type="tel" id="phone" pattern="[0-9]{10}" title="Vui lòng nhập đúng số điện thoại 10 chữ số"
+                readonly>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" title="Vui lòng nhập đúng định dạng email" readonly>
+
+
+            <button id="editButton" class="edit-button" onclick="enableEditMode()">Chỉnh sửa</button>
+            <button type="submit" id="saveButton" style="display: none;" class="edit-button"
+                onclick="saveContactInfo()">Lưu thay đổi</button>
+        </div>
+    </div>
+
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span id="close-btn" class="close-btn">&times;</span>
+            <h2>Update ngày 15/8</h2>
+            <p>Thêm hamburger-menu section up</p>
+            <p>dự kiến 19/8</p>
+        </div>
+    </div>
+
+    <script>
+        // Load user information from localStorage
+        window.onload = function () {
+            var userInfoStr = localStorage.getItem('userInfo');
+            if (userInfoStr) {
+                var userInfo = JSON.parse(userInfoStr);
+                document.getElementById('userId').innerText = userInfo.id;
+                document.getElementById('username').innerText = userInfo.username;
+                document.getElementById('headerUsername').innerText = userInfo.username;
+                document.getElementById('accountBalance').innerText = userInfo.accountBalance;
+                document.getElementById('headerAccountBalance').innerText = userInfo.accountBalance;
+                document.getElementById('acoinBalance').innerText = userInfo.acoinBalance;
+                document.getElementById('promoBalance').innerText = userInfo.promoBalance;
+
+                if (userInfo.contactInfo) {
+                    document.getElementById('phone').value = userInfo.contactInfo.phone;
+                    document.getElementById('email').value = userInfo.contactInfo.email;
+                }
+            } else {
+                alert('Không có thông tin người dùng. Vui lòng đăng nhập lại.');
+                window.location.href = 'login.html';
+            }
+        };
+
+        // Enable edit mode for contact information
+        function enableEditMode() {
+            document.getElementById('phone').removeAttribute('readonly');
+            document.getElementById('email').removeAttribute('readonly');
+            document.getElementById('saveButton').style.display = 'block';
+
+            // Add event listeners to validate input
+            document.getElementById('phone').addEventListener('input', function () {
+                this.value = this.value.replace(/[^0-9]/g, ''); // Remove non-numeric characters
+            });
+        }
+
+        // Save edited contact information to localStorage
+        function saveContactInfo() {
+            var userInfoStr = localStorage.getItem('userInfo');
+            if (userInfoStr) {
+                var userInfo = JSON.parse(userInfoStr);
+                var phone = document.getElementById('phone').value;
+                var email = document.getElementById('email').value;
+
+                // Validate phone number length
+                if (phone.length !== 10) {
+                    alert('Vui lòng nhập đúng số điện thoại 10 chữ số.');
+                    return;
+                }
+
+                // Validate email format
+                var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+                if (!emailPattern.test(email)) {
+                    alert('Vui lòng nhập đúng định dạng email.');
+                    return;
+                }
+
+                userInfo.contactInfo = {
+                    phone: phone,
+                    email: email
+                };
+
+                localStorage.setItem('userInfo', JSON.stringify(userInfo));
+                alert('Thông tin liên hệ đã được lưu thành công!');
+
+                // Update display
+                document.getElementById('phone').setAttribute('readonly', true);
+                document.getElementById('email').setAttribute('readonly', true);
+                document.getElementById('saveButton').style.display = 'none';
+            } else {
+                alert('Không có thông tin người dùng. Vui lòng đăng nhập lại.');
+                window.location.href = 'login.html';
+            }
+        }
+
+
+        // Show popup function
+        function showPopup() {
+            var popup = document.getElementById('popup');
+            popup.style.display = 'flex';
+        }
+
+        // Close popup function
+        function closePopup() {
+            var popup = document.getElementById('popup');
+            popup.style.display = 'none';
+        }
+
+        // Event listener for close button
+        document.getElementById('close-btn').addEventListener('click', closePopup);
+
+        // Show popup on page load (you can modify this to show popup at a specific condition)
+        window.addEventListener('load', function () {
+            showPopup();
+        });
+
+        // Hàm để quay lại menu chính
+        function goBack() {
+            // Ẩn tất cả các phần nội dung
+            document.getElementById('lichSuGiaoDich').style.display = 'none';
+            document.getElementById('thongKeGiaoDich').style.display = 'none';
+            document.getElementById('maCoupon').style.display = 'none';
+
+            // Hiển thị lại menu
+            document.getElementById('menuOptions').style.display = 'block';
+        }
+
+        // Hàm để hiển thị phần nội dung được chọn
+        function showSection(sectionId) {
+            // Ẩn menu chính
+            document.getElementById('menuOptions').style.display = 'none';
+
+            // Hiển thị phần nội dung được chọn
+            document.getElementById(sectionId).style.display = 'block';
+        }
+
+        // Hàm để mở và đóng menu
+        function toggleMenu() {
+            var menu = document.getElementById('menuOptions');
+            if (menu.style.display === 'block') {
+                menu.style.display = 'none';
+            } else {
+                menu.style.display = 'block';
+            }
+        }
+
+        // Đóng menu khi người dùng click bên ngoài menu
+        window.onclick = function (event) {
+            var menu = document.getElementById('menuOptions');
+            if (!event.target.matches('.hamburger-menu')) {
+                if (menu.style.display === 'block') {
+                    menu.style.display = 'none';
+                }
+            }
+        }
+        // This function will load empty data
+        function loadEmptyData() {
+            // No need to call these functions as the data is empty
+            // Just for completeness if you want to clear any data
+            document.getElementById('totalIncome').innerText = 'Tổng thu nhập: Chưa có dữ liệu';
+            document.getElementById('totalExpenditure').innerText = 'Tổng chi tiêu: Chưa có dữ liệu';
+            document.getElementById('netBalance').innerText = 'Số dư còn lại: Chưa có dữ liệu';
+        }
+
+        // Call this function to initialize with empty data
+        loadEmptyData();
+    </script>
+</body>
+
+</html>
