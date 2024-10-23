@@ -13,6 +13,11 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
     <script>
       tailwind.config = {
         theme: {
@@ -184,104 +189,106 @@
           >
             Sản Phẩm Nổi Bật
           </h2>
-          <div class="relative">
-            <div
-              class="flex overflow-x-scroll scrollbar-hide space-x-6 py-4"
-              id="featured-slider"
-            >
-              <div class="flex-shrink-0 w-64 bg-light rounded-lg shadow-md">
-                <img
-                  src="https://placekitten.com/300/200"
-                  alt="Mai vàng đặc biệt"
-                  class="w-full h-40 object-cover rounded-t-lg"
-                />
-                <div class="p-4">
-                  <h3 class="text-lg font-semibold text-primary mb-2">
-                    Mai vàng đặc biệt
-                  </h3>
-                  <p class="text-gray-600 text-sm mb-4">
-                    Hoa 5 cánh, thân uốn nghệ thuật
-                  </p>
-                  <span class="text-xl font-bold text-primary">3,500,000₫</span>
+          <div class="swiper-container">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="bg-light rounded-lg shadow-md">
+                  <img
+                    src="https://placekitten.com/300/200"
+                    alt="Mai vàng đặc biệt"
+                    class="w-full h-40 object-cover rounded-t-lg"
+                  />
+                  <div class="p-4">
+                    <h3 class="text-lg font-semibold text-primary mb-2">
+                      Mai vàng đặc biệt
+                    </h3>
+                    <p class="text-gray-600 text-sm mb-4">
+                      Hoa 5 cánh, thân uốn nghệ thuật
+                    </p>
+                    <span class="text-xl font-bold text-primary"
+                      >3,500,000₫</span
+                    >
+                  </div>
                 </div>
               </div>
-              <div class="flex-shrink-0 w-64 bg-light rounded-lg shadow-md">
-                <img
-                  src="https://placekitten.com/301/200"
-                  alt="Bonsai tùng la hán"
-                  class="w-full h-40 object-cover rounded-t-lg"
-                />
-                <div class="p-4">
-                  <h3 class="text-lg font-semibold text-primary mb-2">
-                    Bonsai tùng la hán
-                  </h3>
-                  <p class="text-gray-600 text-sm mb-4">
-                    Tác phẩm nghệ thuật sống động
-                  </p>
-                  <span class="text-xl font-bold text-primary">5,200,000₫</span>
+              <div class="swiper-slide">
+                <div class="bg-light rounded-lg shadow-md">
+                  <img
+                    src="https://placekitten.com/301/200"
+                    alt="Bonsai tùng la hán"
+                    class="w-full h-40 object-cover rounded-t-lg"
+                  />
+                  <div class="p-4">
+                    <h3 class="text-lg font-semibold text-primary mb-2">
+                      Bonsai tùng la hán
+                    </h3>
+                    <p class="text-gray-600 text-sm mb-4">
+                      Tác phẩm nghệ thuật sống động
+                    </p>
+                    <span class="text-xl font-bold text-primary"
+                      >5,200,000₫</span
+                    >
+                  </div>
                 </div>
               </div>
-              <div class="flex-shrink-0 w-64 bg-light rounded-lg shadow-md">
-                <img
-                  src="https://placekitten.com/302/200"
-                  alt="Cây kim tiền"
-                  class="w-full h-40 object-cover rounded-t-lg"
-                />
-                <div class="p-4">
-                  <h3 class="text-lg font-semibold text-primary mb-2">
-                    Cây kim tiền
-                  </h3>
-                  <p class="text-gray-600 text-sm mb-4">
-                    Mang lại may mắn, tài lộc
-                  </p>
-                  <span class="text-xl font-bold text-primary">850,000₫</span>
+              <div class="swiper-slide">
+                <div class="bg-light rounded-lg shadow-md">
+                  <img
+                    src="https://placekitten.com/302/200"
+                    alt="Cây kim tiền"
+                    class="w-full h-40 object-cover rounded-t-lg"
+                  />
+                  <div class="p-4">
+                    <h3 class="text-lg font-semibold text-primary mb-2">
+                      Cây kim tiền
+                    </h3>
+                    <p class="text-gray-600 text-sm mb-4">
+                      Mang lại may mắn, tài lộc
+                    </p>
+                    <span class="text-xl font-bold text-primary">850,000₫</span>
+                  </div>
                 </div>
               </div>
-              <div class="flex-shrink-0 w-64 bg-light rounded-lg shadow-md">
-                <img
-                  src="https://placekitten.com/303/200"
-                  alt="Cây trầu bà"
-                  class="w-full h-40 object-cover rounded-t-lg"
-                />
-                <div class="p-4">
-                  <h3 class="text-lg font-semibold text-primary mb-2">
-                    Cây trầu bà
-                  </h3>
-                  <p class="text-gray-600 text-sm mb-4">
-                    Thanh lọc không khí hiệu quả
-                  </p>
-                  <span class="text-xl font-bold text-primary">420,000₫</span>
+              <div class="swiper-slide">
+                <div class="bg-light rounded-lg shadow-md">
+                  <img
+                    src="https://placekitten.com/303/200"
+                    alt="Cây trầu bà"
+                    class="w-full h-40 object-cover rounded-t-lg"
+                  />
+                  <div class="p-4">
+                    <h3 class="text-lg font-semibold text-primary mb-2">
+                      Cây trầu bà
+                    </h3>
+                    <p class="text-gray-600 text-sm mb-4">
+                      Thanh lọc không khí hiệu quả
+                    </p>
+                    <span class="text-xl font-bold text-primary">420,000₫</span>
+                  </div>
                 </div>
               </div>
-              <div class="flex-shrink-0 w-64 bg-light rounded-lg shadow-md">
-                <img
-                  src="https://placekitten.com/304/200"
-                  alt="Cây lưỡi hổ"
-                  class="w-full h-40 object-cover rounded-t-lg"
-                />
-                <div class="p-4">
-                  <h3 class="text-lg font-semibold text-primary mb-2">
-                    Cây lưỡi hổ
-                  </h3>
-                  <p class="text-gray-600 text-sm mb-4">
-                    Dễ chăm sóc, phù hợp văn phòng
-                  </p>
-                  <span class="text-xl font-bold text-primary">280,000₫</span>
+              <div class="swiper-slide">
+                <div class="bg-light rounded-lg shadow-md">
+                  <img
+                    src="https://placekitten.com/304/200"
+                    alt="Cây lưỡi hổ"
+                    class="w-full h-40 object-cover rounded-t-lg"
+                  />
+                  <div class="p-4">
+                    <h3 class="text-lg font-semibold text-primary mb-2">
+                      Cây lưỡi hổ
+                    </h3>
+                    <p class="text-gray-600 text-sm mb-4">
+                      Dễ chăm sóc, phù hợp văn phòng
+                    </p>
+                    <span class="text-xl font-bold text-primary">280,000₫</span>
+                  </div>
                 </div>
               </div>
             </div>
-            <button
-              class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 hover:bg-opacity-75 rounded-full p-2 ml-2"
-              id="prev-btn"
-            >
-              <i class="fas fa-chevron-left text-primary"></i>
-            </button>
-            <button
-              class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 hover:bg-opacity-75 rounded-full p-2 mr-2"
-              id="next-btn"
-            >
-              <i class="fas fa-chevron-right text-primary"></i>
-            </button>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
           </div>
         </div>
       </section>
@@ -483,83 +490,155 @@
           >
             Khách Hàng Nói Gì Về Chúng Tôi
           </h2>
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="bg-light p-6 rounded-lg shadow-md">
-              <div class="flex items-center mb-4">
-                <img
-                  src="https://placekitten.com/100/100"
-                  alt="Khách hàng"
-                  class="w-12 h-12 rounded-full mr-4"
-                />
-                <div>
-                  <h4 class="font-semibold">Nguyễn Văn A</h4>
-                  <div class="text-yellow-400">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
+          <div class="swiper-container testimonial-slider">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="bg-light p-6 rounded-lg shadow-md">
+                  <div class="flex items-center mb-4">
+                    <img
+                      src="https://placekitten.com/100/100"
+                      alt="Khách hàng"
+                      class="w-12 h-12 rounded-full mr-4"
+                    />
+                    <div>
+                      <h4 class="font-semibold">Nguyễn Văn A</h4>
+                      <div class="text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                      </div>
+                    </div>
                   </div>
+                  <p class="text-gray-600">
+                    "Cây mai tôi mua từ Vườn Mai Chín Tèo không chỉ đẹp mà còn
+                    rất khỏe mạnh. Dịch vụ chăm sóc tận tình, chuyên nghiệp."
+                  </p>
                 </div>
               </div>
-              <p class="text-gray-600">
-                "Cây mai tôi mua từ Vườn Mai Chín Tèo không chỉ đẹp mà còn rất
-                khỏe mạnh. Dịch vụ chăm sóc tận tình, chuyên nghiệp."
-              </p>
+              <div class="swiper-slide">
+                <div class="bg-light p-6 rounded-lg shadow-md">
+                  <div class="flex items-center mb-4">
+                    <img
+                      src="https://placekitten.com/101/101"
+                      alt="Khách hàng"
+                      class="w-12 h-12 rounded-full mr-4"
+                    />
+                    <div>
+                      <h4 class="font-semibold">Trần Thị B</h4>
+                      <div class="text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="text-gray-600">
+                    "Đội ngũ chuyên gia tại đây thực sự am hiểu về cây cảnh. Họ
+                    đã giúp tôi chọn được cây phù hợp nhất cho không gian sống
+                    của mình."
+                  </p>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="bg-light p-6 rounded-lg shadow-md">
+                  <div class="flex items-center mb-4">
+                    <img
+                      src="https://placekitten.com/102/102"
+                      alt="Khách hàng"
+                      class="w-12 h-12 rounded-full mr-4"
+                    />
+                    <div>
+                      <h4 class="font-semibold">Lê Văn C</h4>
+                      <div class="text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="text-gray-600">
+                    "Chất lượng cây cảnh tại đây vượt xa mong đợi của tôi. Sự
+                    tận tâm trong việc chăm sóc và tư vấn khiến tôi trở thành
+                    khách hàng trung thành."
+                  </p>
+                </div>
+              </div>
             </div>
-            <div class="bg-light p-6 rounded-lg shadow-md">
-              <div class="flex items-center mb-4">
-                <img
-                  src="https://placekitten.com/101/101"
-                  alt="Khách hàng"
-                  class="w-12 h-12 rounded-full mr-4"
-                />
-                <div>
-                  <h4 class="font-semibold">Trần Thị B</h4>
-                  <div class="text-yellow-400">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
-                  </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="faq" class="py-16 bg-pattern">
+        <div class="container mx-auto px-4">
+          <h2
+            class="text-3xl lg:text-4xl font-serif font-bold text-center text-primary mb-12"
+          >
+            Câu Hỏi Thường Gặp
+          </h2>
+          <div class="max-w-3xl mx-auto">
+            <div class="space-y-4">
+              <div class="bg-white rounded-lg shadow-md">
+                <button
+                  class="flex justify-between items-center w-full px-4 py-3 text-left focus:outline-none"
+                >
+                  <span class="font-semibold"
+                    >Làm thế nào để chọn cây cảnh phù hợp cho không gian của
+                    tôi?</span
+                  >
+                  <i class="fas fa-chevron-down text-primary"></i>
+                </button>
+                <div class="px-4 py-3 text-gray-600 hidden">
+                  Để chọn cây cảnh phù hợp, bạn nên xem xét các yếu tố như kích
+                  thước không gian, điều kiện ánh sáng, độ ẩm, và phong cách
+                  trang trí. Chúng tôi luôn sẵn sàng tư vấn để giúp bạn lựa chọn
+                  cây cảnh phù hợp nhất.
                 </div>
               </div>
-              <p class="text-gray-600">
-                "Đội ngũ chuyên gia tại đây thực sự am hiểu về cây cảnh. Họ đã
-                giúp tôi chọn được cây phù hợp nhất cho không gian sống của
-                mình."
-              </p>
-            </div>
-            <div class="bg-light p-6 rounded-lg shadow-md">
-              <div class="flex items-center mb-4">
-                <img
-                  src="https://placekitten.com/102/102"
-                  alt="Khách hàng"
-                  class="w-12 h-12 rounded-full mr-4"
-                />
-                <div>
-                  <h4 class="font-semibold">Lê Văn C</h4>
-                  <div class="text-yellow-400">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                  </div>
+              <div class="bg-white rounded-lg shadow-md">
+                <button
+                  class="flex justify-between items-center w-full px-4 py-3 text-left focus:outline-none"
+                >
+                  <span class="font-semibold"
+                    >Vườn Mai Chín Tèo có dịch vụ giao hàng không?</span
+                  >
+                  <i class="fas fa-chevron-down text-primary"></i>
+                </button>
+                <div class="px-4 py-3 text-gray-600 hidden">
+                  Có, chúng tôi cung cấp dịch vụ giao hàng tận nơi. Đối với các
+                  đơn hàng trong nội thành, chúng tôi thường giao hàng trong
+                  vòng 24-48 giờ. Với các đơn hàng ngoại thành hoặc liên tỉnh,
+                  thời gian giao hàng có thể từ 3-5 ngày làm việc.
                 </div>
               </div>
-              <p class="text-gray-600">
-                "Chất lượng cây cảnh tại đây vượt xa mong đợi của tôi. Sự tận
-                tâm trong việc chăm sóc và tư vấn khiến tôi trở thành khách hàng
-                trung thành."
-              </p>
+              <div class="bg-white rounded-lg shadow-md">
+                <button
+                  class="flex justify-between items-center w-full px-4 py-3 text-left focus:outline-none"
+                >
+                  <span class="font-semibold"
+                    >Làm thế nào để chăm sóc cây bonsai?</span
+                  >
+                  <i class="fas fa-chevron-down text-primary"></i>
+                </button>
+                <div class="px-4 py-3 text-gray-600 hidden">
+                  Chăm sóc cây bonsai đòi hỏi sự kiên nhẫn và kỹ thuật. Các bước
+                  cơ bản bao gồm tưới nước đều đặn, cắt tỉa định kỳ, bón phân và
+                  tạo hình. Chúng tôi cung cấp hướng dẫn chi tiết kèm theo mỗi
+                  cây bonsai và luôn sẵn sàng tư vấn thêm nếu bạn cần.
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="contact" class="py-16 bg-pattern">
+      <section id="contact" class="py-16 bg-white">
         <div class="container mx-auto px-4">
           <h2
             class="text-3xl lg:text-4xl font-serif font-bold text-center text-primary mb-12"
@@ -856,16 +935,54 @@
       });
 
       // Featured products slider
-      const slider = document.getElementById("featured-slider");
-      const prevBtn = document.getElementById("prev-btn");
-      const nextBtn = document.getElementById("next-btn");
-
-      prevBtn.addEventListener("click", () => {
-        slider.scrollBy({ left: -300, behavior: "smooth" });
+      const featuredSwiper = new Swiper(".swiper-container", {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        loop: true,
+        autoplay: {
+          delay: 5000
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev"
+        },
+        breakpoints: {
+          640: {
+            slidesPerView: 2
+          },
+          768: {
+            slidesPerView: 3
+          },
+          1024: {
+            slidesPerView: 4
+          }
+        }
       });
 
-      nextBtn.addEventListener("click", () => {
-        slider.scrollBy({ left: 300, behavior: "smooth" });
+      // Testimonial slider
+      const testimonialSwiper = new Swiper(".testimonial-slider", {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        loop: true,
+        autoplay: {
+          delay: 5000
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true
+        },
+        breakpoints: {
+          768: {
+            slidesPerView: 2
+          },
+          1024: {
+            slidesPerView: 3
+          }
+        }
       });
 
       // Header scroll effect
@@ -943,6 +1060,18 @@
         const itemCount = cart.reduce((sum, item) => sum + item.quantity, 0);
         cartCount.textContent = itemCount;
       }
+
+      // FAQ accordion
+      const faqButtons = document.querySelectorAll("#faq button");
+      faqButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const content = button.nextElementSibling;
+          content.classList.toggle("hidden");
+          const icon = button.querySelector("i");
+          icon.classList.toggle("fa-chevron-down");
+          icon.classList.toggle("fa-chevron-up");
+        });
+      });
     </script>
   </body>
 </html>
