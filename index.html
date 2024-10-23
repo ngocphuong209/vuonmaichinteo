@@ -39,23 +39,34 @@
         background-color: #f9f7f3;
         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23d1d5db' fill-opacity='0.15'%3E%3Cpath d='M0 38.59l2.83-2.83 1.41 1.41L1.41 40H0v-1.41zM0 1.4l2.83 2.83 1.41-1.41L1.41 0H0v1.41zM38.59 40l-2.83-2.83 1.41-1.41L40 38.59V40h-1.41zM40 1.41l-2.83 2.83-1.41-1.41L38.59 0H40v1.41zM20 18.6l2.83-2.83 1.41 1.41L21.41 20l2.83 2.83-1.41 1.41L20 21.41l-2.83 2.83-1.41-1.41L18.59 20l-2.83-2.83 1.41-1.41L20 18.59z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
       }
+
+      .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+      }
+      .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
     </style>
   </head>
   <body class="font-sans text-dark bg-light">
-    <header class="bg-white shadow-md fixed w-full z-50">
+    <header
+      class="bg-white shadow-md fixed w-full z-50 transition-all duration-300"
+      id="header"
+    >
       <div class="container mx-auto px-4 py-4">
         <div class="flex justify-between items-center">
           <div class="flex items-center space-x-4">
             <img
               src="https://placekitten.com/100/100"
               alt="Logo Vườn Mai Chín Tèo"
-              class="w-12 h-12 rounded-full object-cover border-2 border-secondary"
+              class="w-10 h-10 md:w-12 md:h-12 rounded-full object-cover border-2 border-secondary"
             />
-            <h1 class="text-2xl font-serif font-bold text-primary">
+            <h1 class="text-xl md:text-2xl font-serif font-bold text-primary">
               Vườn Mai Chín Tèo
             </h1>
           </div>
-          <nav class="hidden lg:flex space-x-8">
+          <nav class="hidden lg:flex space-x-6">
             <a
               href="#home"
               class="text-dark hover:text-primary transition-colors duration-200"
@@ -83,21 +94,25 @@
             >
           </nav>
           <div class="flex items-center space-x-4">
-            <div class="relative">
+            <div class="relative hidden md:block">
               <input
                 type="text"
-                placeholder="Tìm kiếm cây cảnh..."
-                class="pl-10 pr-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:border-primary"
+                placeholder="Tìm kiếm..."
+                class="pl-8 pr-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:border-primary text-sm"
               />
               <i
-                class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"
+                class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 text-sm"
               ></i>
             </div>
             <a
               href="#cart"
-              class="text-dark hover:text-primary transition-colors duration-200"
+              class="text-dark hover:text-primary transition-colors duration-200 relative"
             >
-              <i class="fas fa-shopping-cart text-2xl"></i>
+              <i class="fas fa-shopping-cart text-xl"></i>
+              <span
+                class="absolute -top-2 -right-2 bg-accent text-primary rounded-full w-5 h-5 flex items-center justify-center text-xs font-bold"
+                >3</span
+              >
             </a>
             <button
               class="lg:hidden text-2xl text-primary focus:outline-none"
@@ -128,52 +143,164 @@
     </header>
 
     <main class="pt-20">
-      <section id="home" class="bg-pattern min-h-screen flex items-center">
+      <section
+        id="home"
+        class="bg-pattern min-h-screen flex items-center py-12"
+      >
         <div class="container mx-auto px-4">
           <div class="flex flex-col lg:flex-row items-center">
             <div class="lg:w-1/2 mb-8 lg:mb-0">
               <h2
-                class="text-4xl lg:text-6xl font-serif font-bold text-primary mb-6"
+                class="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-primary mb-6"
               >
                 Khám Phá Vẻ Đẹp Cây Cảnh Nghệ Thuật
               </h2>
-              <p class="text-xl text-gray-700 mb-8">
+              <p class="text-lg md:text-xl text-gray-700 mb-8">
                 Tại Vườn Mai Chín Tèo, chúng tôi mang đến cho bạn những cây cảnh
                 độc đáo và tinh tế nhất, được chăm sóc bởi các nghệ nhân hàng
                 đầu.
               </p>
               <a
                 href="#products"
-                class="bg-primary text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-opacity-90 transition-all duration-300 inline-block"
+                class="bg-primary text-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-opacity-90 transition-all duration-300 inline-block"
                 >Khám phá bộ sưu tập</a
               >
             </div>
-            <div class="lg:w-1/2">
+            <div class="lg:w-1/2 mt-8 lg:mt-0">
               <img
                 src="https://placekitten.com/800/600"
                 alt="Cây cảnh nghệ thuật"
-                class="rounded-lg shadow-2xl"
+                class="rounded-lg shadow-2xl w-full h-auto"
               />
             </div>
           </div>
         </div>
       </section>
 
-      <section id="products" class="py-16 bg-white">
+      <section id="featured" class="py-16 bg-white">
         <div class="container mx-auto px-4">
           <h2
-            class="text-3xl lg:text-4xl font-serif font-bold text-center text-primary mb-12"
+            class="text-2xl md:text-3xl lg:text-4xl font-serif font-bold text-center text-primary mb-12"
+          >
+            Sản Phẩm Nổi Bật
+          </h2>
+          <div class="relative">
+            <div
+              class="flex overflow-x-scroll scrollbar-hide space-x-6 py-4"
+              id="featured-slider"
+            >
+              <div class="flex-shrink-0 w-64 bg-light rounded-lg shadow-md">
+                <img
+                  src="https://placekitten.com/300/200"
+                  alt="Mai vàng đặc biệt"
+                  class="w-full h-40 object-cover rounded-t-lg"
+                />
+                <div class="p-4">
+                  <h3 class="text-lg font-semibold text-primary mb-2">
+                    Mai vàng đặc biệt
+                  </h3>
+                  <p class="text-gray-600 text-sm mb-4">
+                    Hoa 5 cánh, thân uốn nghệ thuật
+                  </p>
+                  <span class="text-xl font-bold text-primary">3,500,000₫</span>
+                </div>
+              </div>
+              <div class="flex-shrink-0 w-64 bg-light rounded-lg shadow-md">
+                <img
+                  src="https://placekitten.com/301/200"
+                  alt="Bonsai tùng la hán"
+                  class="w-full h-40 object-cover rounded-t-lg"
+                />
+                <div class="p-4">
+                  <h3 class="text-lg font-semibold text-primary mb-2">
+                    Bonsai tùng la hán
+                  </h3>
+                  <p class="text-gray-600 text-sm mb-4">
+                    Tác phẩm nghệ thuật sống động
+                  </p>
+                  <span class="text-xl font-bold text-primary">5,200,000₫</span>
+                </div>
+              </div>
+              <div class="flex-shrink-0 w-64 bg-light rounded-lg shadow-md">
+                <img
+                  src="https://placekitten.com/302/200"
+                  alt="Cây kim tiền"
+                  class="w-full h-40 object-cover rounded-t-lg"
+                />
+                <div class="p-4">
+                  <h3 class="text-lg font-semibold text-primary mb-2">
+                    Cây kim tiền
+                  </h3>
+                  <p class="text-gray-600 text-sm mb-4">
+                    Mang lại may mắn, tài lộc
+                  </p>
+                  <span class="text-xl font-bold text-primary">850,000₫</span>
+                </div>
+              </div>
+              <div class="flex-shrink-0 w-64 bg-light rounded-lg shadow-md">
+                <img
+                  src="https://placekitten.com/303/200"
+                  alt="Cây trầu bà"
+                  class="w-full h-40 object-cover rounded-t-lg"
+                />
+                <div class="p-4">
+                  <h3 class="text-lg font-semibold text-primary mb-2">
+                    Cây trầu bà
+                  </h3>
+                  <p class="text-gray-600 text-sm mb-4">
+                    Thanh lọc không khí hiệu quả
+                  </p>
+                  <span class="text-xl font-bold text-primary">420,000₫</span>
+                </div>
+              </div>
+              <div class="flex-shrink-0 w-64 bg-light rounded-lg shadow-md">
+                <img
+                  src="https://placekitten.com/304/200"
+                  alt="Cây lưỡi hổ"
+                  class="w-full h-40 object-cover rounded-t-lg"
+                />
+                <div class="p-4">
+                  <h3 class="text-lg font-semibold text-primary mb-2">
+                    Cây lưỡi hổ
+                  </h3>
+                  <p class="text-gray-600 text-sm mb-4">
+                    Dễ chăm sóc, phù hợp văn phòng
+                  </p>
+                  <span class="text-xl font-bold text-primary">280,000₫</span>
+                </div>
+              </div>
+            </div>
+            <button
+              class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 hover:bg-opacity-75 rounded-full p-2 ml-2"
+              id="prev-btn"
+            >
+              <i class="fas fa-chevron-left text-primary"></i>
+            </button>
+            <button
+              class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 hover:bg-opacity-75 rounded-full p-2 mr-2"
+              id="next-btn"
+            >
+              <i class="fas fa-chevron-right text-primary"></i>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section id="products" class="py-16 bg-pattern">
+        <div class="container mx-auto px-4">
+          <h2
+            class="text-2xl md:text-3xl lg:text-4xl font-serif font-bold text-center text-primary mb-12"
           >
             Bộ Sưu Tập Cây Cảnh
           </h2>
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div
-              class="bg-light rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-2"
+              class="bg-white rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-2"
             >
               <img
                 src="https://placekitten.com/600/400"
                 alt="Mai vàng Hoàng Gia"
-                class="w-full h-64 object-cover"
+                class="w-full h-48 md:h-64 object-cover"
               />
               <div class="p-6">
                 <h3 class="text-xl font-serif font-semibold text-primary mb-2">
@@ -186,21 +313,24 @@
                   <span class="text-2xl font-bold text-primary"
                     >2,500,000₫</span
                   >
-                  <a
-                    href="#"
-                    class="bg-secondary text-white px-4 py-2 rounded-full hover:bg-opacity-90 transition-all duration-200"
-                    >Thêm vào giỏ</a
+                  <button
+                    class="bg-secondary text-white px-4 py-2 rounded-full hover:bg-opacity-90 transition-all duration-200 add-to-cart"
+                    data-id="1"
+                    data-name="Mai vàng Hoàng Gia"
+                    data-price="2500000"
                   >
+                    Thêm vào giỏ
+                  </button>
                 </div>
               </div>
             </div>
             <div
-              class="bg-light rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-2"
+              class="bg-white rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-2"
             >
               <img
                 src="https://placekitten.com/601/400"
                 alt="Bonsai Tùng La Hán"
-                class="w-full h-64 object-cover"
+                class="w-full h-48 md:h-64 object-cover"
               />
               <div class="p-6">
                 <h3 class="text-xl font-serif font-semibold text-primary mb-2">
@@ -213,21 +343,24 @@
                   <span class="text-2xl font-bold text-primary"
                     >3,800,000₫</span
                   >
-                  <a
-                    href="#"
-                    class="bg-secondary text-white px-4 py-2 rounded-full hover:bg-opacity-90 transition-all duration-200"
-                    >Thêm vào giỏ</a
+                  <button
+                    class="bg-secondary text-white px-4 py-2 rounded-full hover:bg-opacity-90 transition-all duration-200 add-to-cart"
+                    data-id="2"
+                    data-name="Bonsai Tùng La Hán"
+                    data-price="3800000"
                   >
+                    Thêm vào giỏ
+                  </button>
                 </div>
               </div>
             </div>
             <div
-              class="bg-light rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-2"
+              class="bg-white rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-2"
             >
               <img
                 src="https://placekitten.com/602/400"
                 alt="Cây Phát Tài"
-                class="w-full h-64 object-cover"
+                class="w-full h-48 md:h-64 object-cover"
               />
               <div class="p-6">
                 <h3 class="text-xl font-serif font-semibold text-primary mb-2">
@@ -240,11 +373,14 @@
                   <span class="text-2xl font-bold text-primary"
                     >1,200,000₫</span
                   >
-                  <a
-                    href="#"
-                    class="bg-secondary text-white px-4 py-2 rounded-full hover:bg-opacity-90 transition-all duration-200"
-                    >Thêm vào giỏ</a
+                  <button
+                    class="bg-secondary text-white px-4 py-2 rounded-full hover:bg-opacity-90 transition-all duration-200 add-to-cart"
+                    data-id="3"
+                    data-name="Cây Phát Tài"
+                    data-price="1200000"
                   >
+                    Thêm vào giỏ
+                  </button>
                 </div>
               </div>
             </div>
@@ -259,7 +395,7 @@
         </div>
       </section>
 
-      <section id="care" class="py-16 bg-pattern">
+      <section id="care" class="py-16 bg-white">
         <div class="container mx-auto px-4">
           <h2
             class="text-3xl lg:text-4xl font-serif font-bold text-center text-primary mb-12"
@@ -267,7 +403,7 @@
             Hướng Dẫn Chăm Sóc Cây
           </h2>
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="bg-white p-6 rounded-lg shadow-md">
+            <div class="bg-light p-6 rounded-lg shadow-md">
               <i class="fas fa-tint text-4xl text-secondary mb-4"></i>
               <h3 class="text-xl font-semibold text-primary mb-2">Tưới nước</h3>
               <p class="text-gray-600">
@@ -275,7 +411,7 @@
                 thuộc vào loại cây và điều kiện môi trường.
               </p>
             </div>
-            <div class="bg-white p-6 rounded-lg shadow-md">
+            <div class="bg-light p-6 rounded-lg shadow-md">
               <i class="fas fa-sun text-4xl text-secondary mb-4"></i>
               <h3 class="text-xl font-semibold text-primary mb-2">Ánh sáng</h3>
               <p class="text-gray-600">
@@ -283,7 +419,7 @@
                 Một số loại cây cần nhiều ánh sáng hơn.
               </p>
             </div>
-            <div class="bg-white p-6 rounded-lg shadow-md">
+            <div class="bg-light p-6 rounded-lg shadow-md">
               <i class="fas fa-cut text-4xl text-secondary mb-4"></i>
               <h3 class="text-xl font-semibold text-primary mb-2">Cắt tỉa</h3>
               <p class="text-gray-600">
@@ -302,7 +438,7 @@
         </div>
       </section>
 
-      <section id="about" class="py-16 bg-white">
+      <section id="about" class="py-16 bg-pattern">
         <div class="container mx-auto px-4">
           <div class="flex flex-col lg:flex-row items-center justify-between">
             <div class="lg:w-1/2 mb-8 lg:mb-0">
@@ -340,7 +476,7 @@
         </div>
       </section>
 
-      <section id="testimonials" class="py-16 bg-pattern">
+      <section id="testimonials" class="py-16 bg-white">
         <div class="container mx-auto px-4">
           <h2
             class="text-3xl lg:text-4xl font-serif font-bold text-center text-primary mb-12"
@@ -348,7 +484,7 @@
             Khách Hàng Nói Gì Về Chúng Tôi
           </h2>
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="bg-white p-6 rounded-lg shadow-md">
+            <div class="bg-light p-6 rounded-lg shadow-md">
               <div class="flex items-center mb-4">
                 <img
                   src="https://placekitten.com/100/100"
@@ -371,7 +507,7 @@
                 khỏe mạnh. Dịch vụ chăm sóc tận tình, chuyên nghiệp."
               </p>
             </div>
-            <div class="bg-white p-6 rounded-lg shadow-md">
+            <div class="bg-light p-6 rounded-lg shadow-md">
               <div class="flex items-center mb-4">
                 <img
                   src="https://placekitten.com/101/101"
@@ -395,7 +531,7 @@
                 mình."
               </p>
             </div>
-            <div class="bg-white p-6 rounded-lg shadow-md">
+            <div class="bg-light p-6 rounded-lg shadow-md">
               <div class="flex items-center mb-4">
                 <img
                   src="https://placekitten.com/102/102"
@@ -423,7 +559,7 @@
         </div>
       </section>
 
-      <section id="contact" class="py-16 bg-white">
+      <section id="contact" class="py-16 bg-pattern">
         <div class="container mx-auto px-4">
           <h2
             class="text-3xl lg:text-4xl font-serif font-bold text-center text-primary mb-12"
@@ -473,7 +609,7 @@
               </div>
             </div>
             <div class="lg:w-1/2">
-              <form class="bg-light p-8 rounded-lg shadow-md">
+              <form class="bg-white p-8 rounded-lg shadow-md">
                 <div class="mb-4">
                   <label
                     for="name"
@@ -574,7 +710,7 @@
                 <a
                   href="#products"
                   class="hover:text-accent transition-colors duration-200"
-                  >Sản ph��m</a
+                  >Sản phẩm</a
                 >
               </li>
               <li>
@@ -651,7 +787,7 @@
               <input
                 type="email"
                 placeholder="Email của bạn"
-                class="w-full px-4 py-2 rounded-l-full focus:outline-none focus:ring-2 focus:ring-accent"
+                class="w-full px-4 py-2 rounded-l-full focus:outline-none focus:ring-2 focus:ring-accent text-gray-800"
               />
               <button
                 type="submit"
@@ -670,6 +806,37 @@
       </div>
     </footer>
 
+    <div
+      id="cart-modal"
+      class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden"
+    >
+      <div
+        class="bg-white p-8 rounded-lg shadow-xl max-w-md w-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+      >
+        <h2 class="text-2xl font-bold mb-4">Giỏ hàng của bạn</h2>
+        <div id="cart-items" class="mb-4">
+          <!-- Cart items will be dynamically added here -->
+        </div>
+        <div class="flex justify-between items-center font-bold text-lg mb-4">
+          <span>Tổng cộng:</span>
+          <span id="cart-total">0₫</span>
+        </div>
+        <div class="flex justify-end">
+          <button
+            id="close-cart"
+            class="bg-gray-300 text-gray-800 px-4 py-2 rounded-full mr-2 hover:bg-gray-400 transition-colors duration-200"
+          >
+            Đóng
+          </button>
+          <button
+            class="bg-primary text-white px-4 py-2 rounded-full hover:bg-opacity-90 transition-colors duration-200"
+          >
+            Thanh toán
+          </button>
+        </div>
+      </div>
+    </div>
+
     <script>
       // Mobile menu toggle
       const menuToggle = document.getElementById("menu-toggle");
@@ -687,6 +854,95 @@
           });
         });
       });
+
+      // Featured products slider
+      const slider = document.getElementById("featured-slider");
+      const prevBtn = document.getElementById("prev-btn");
+      const nextBtn = document.getElementById("next-btn");
+
+      prevBtn.addEventListener("click", () => {
+        slider.scrollBy({ left: -300, behavior: "smooth" });
+      });
+
+      nextBtn.addEventListener("click", () => {
+        slider.scrollBy({ left: 300, behavior: "smooth" });
+      });
+
+      // Header scroll effect
+      const header = document.getElementById("header");
+      let lastScrollTop = 0;
+
+      window.addEventListener("scroll", () => {
+        let scrollTop =
+          window.pageYOffset || document.documentElement.scrollTop;
+        if (scrollTop > lastScrollTop) {
+          header.style.transform = "translateY(-100%)";
+        } else {
+          header.style.transform = "translateY(0)";
+        }
+        lastScrollTop = scrollTop;
+      });
+
+      // Shopping cart functionality
+      const cartIcon = document.querySelector('a[href="#cart"]');
+      const cartModal = document.getElementById("cart-modal");
+      const closeCart = document.getElementById("close-cart");
+      const cartItems = document.getElementById("cart-items");
+      const cartTotal = document.getElementById("cart-total");
+      const addToCartButtons = document.querySelectorAll(".add-to-cart");
+
+      let cart = [];
+
+      cartIcon.addEventListener("click", (e) => {
+        e.preventDefault();
+        cartModal.classList.remove("hidden");
+        updateCartDisplay();
+      });
+
+      closeCart.addEventListener("click", () => {
+        cartModal.classList.add("hidden");
+      });
+
+      addToCartButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const id = button.getAttribute("data-id");
+          const name = button.getAttribute("data-name");
+          const price = parseInt(button.getAttribute("data-price"));
+
+          const existingItem = cart.find((item) => item.id === id);
+          if (existingItem) {
+            existingItem.quantity += 1;
+          } else {
+            cart.push({ id, name, price, quantity: 1 });
+          }
+
+          updateCartDisplay();
+        });
+      });
+
+      function updateCartDisplay() {
+        cartItems.innerHTML = "";
+        let total = 0;
+
+        cart.forEach((item) => {
+          const itemTotal = item.price * item.quantity;
+          total += itemTotal;
+
+          cartItems.innerHTML += `
+            <div class="flex justify-between items-center mb-2">
+              <span>${item.name} x ${item.quantity}</span>
+              <span>${itemTotal.toLocaleString("vi-VN")}₫</span>
+            </div>
+          `;
+        });
+
+        cartTotal.textContent = total.toLocaleString("vi-VN") + "₫";
+
+        // Update cart icon
+        const cartCount = document.querySelector('a[href="#cart"] span');
+        const itemCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+        cartCount.textContent = itemCount;
+      }
     </script>
   </body>
 </html>
