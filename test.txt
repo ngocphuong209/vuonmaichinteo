@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vườn Mai Chín Tèo - Tinh Hoa Mai Vàng Việt Nam</title>
+    <meta
+      name="description"
+      content="Khám phá bộ sưu tập mai vàng độc đáo và cao cấp tại Vườn Mai Chín Tèo. Chúng tôi tự hào mang đến những cây mai quý hiếm và dịch vụ chăm sóc cây cảnh đẳng cấp."
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#1A202C",
+              secondary: "#C53030",
+              accent: "#F6AD55",
+              light: "#F7FAFC"
+            },
+            fontFamily: {
+              sans: ["Montserrat", "sans-serif"],
+              serif: ["Playfair Display", "serif"]
+            }
+          }
+        }
+      };
+    </script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap");
+
+      .bg-gradient {
+        background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+      }
+
+      .text-shadow {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .hover-grow {
+        transition: transform 0.3s ease;
+      }
+
+      .hover-grow:hover {
+        transform: scale(1.05);
+      }
+
+      .custom-shape-divider-bottom-1635688644 {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        line-height: 0;
+      }
+
+      .custom-shape-divider-bottom-1635688644 svg {
+        position: relative;
+        display: block;
+        width: calc(100% + 1.3px);
+        height: 150px;
+      }
+
+      .custom-shape-divider-bottom-1635688644 .shape-fill {
+        fill: #ffffff;
+      }
+
+      .dropdown:hover .dropdown-menu {
+        display: block;
+      }
+
+      .animate-float {
+        animation: float 6s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
+      }
+
+      .scroll-indicator::after {
+        content: "";
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        margin-left: -20px;
+        border-left: 1px solid #fff;
+        border-bottom: 1px solid #fff;
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+        box-sizing: border-box;
+        animation: scrollDown 2s infinite;
+      }
+
+      @keyframes scrollDown {
+        0% {
+          transform: rotate(-45deg) translate(0, 0);
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+        }
+        100% {
+          transform: rotate(-45deg) translate(-20px, 20px);
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+  <body class="font-sans text-gray-800 bg-light">
+    <header class="fixed w-full z-50 transition-all duration-300" id="navbar">
+      <div class="container mx-auto px-4 py-4">
+        <div class="flex justify-between items-center">
+          <div class="flex items-center space-x-4">
+            <img
+              src="https://placekitten.com/100/100"
+              alt="Logo Vườn Mai Chín Tèo"
+              class="w-12 h-12 rounded-full object-cover border-2 border-accent"
+            />
+            <h1 class="text-2xl font-serif font-bold text-primary">
+              Vườn Mai Chín Tèo
+            </h1>
+          </div>
+          <nav class="hidden lg:flex space-x-8">
+            <a
+              href="#home"
+              class="text-primary hover:text-secondary transition-colors duration-200"
+              >Trang chủ</a
+            >
+            <a
+              href="#products"
+              class="text-primary hover:text-secondary transition-colors duration-200"
+              >Bộ sưu tập</a
+            >
+            <a
+              href="#about"
+              class="text-primary hover:text-secondary transition-colors duration-200"
+              >Về chúng tôi</a
+            >
+            <a
+              href="#contact"
+              class="text-primary hover:text-secondary transition-colors duration-200"
+              >Liên hệ</a
+            >
+            <div class="dropdown inline-block relative">
+              <button
+                class="text-primary hover:text-secondary transition-colors duration-200"
+              >
+                Khác <i class="fas fa-chevron-down ml-1"></i>
+              </button>
+              <ul
+                class="dropdown-menu absolute hidden text-gray-700 pt-2 w-48 bg-white rounded-md shadow-xl"
+              >
+                <li>
+                  <a
+                    class="rounded-t-md bg-white hover:bg-gray-200 py-2 px-4 block"
+                    href="gioithieu.html"
+                    >Giới thiệu chi tiết</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="bg-white hover:bg-gray-200 py-2 px-4 block"
+                    href="tintuc.html"
+                    >Tin tức</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="bg-white hover:bg-gray-200 py-2 px-4 block"
+                    href="qrxacthuc.html"
+                    >QR xác thực</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="rounded-b-md bg-white hover:bg-gray-200 py-2 px-4 block"
+                    href="admin.html"
+                    >Quản trị</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </nav>
+          <button
+            class="lg:hidden text-2xl text-primary focus:outline-none"
+            id="menu-toggle"
+          >
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
+      <div class="lg:hidden hidden bg-white p-4 shadow-md" id="mobile-menu">
+        <a href="#home" class="block py-2 text-primary hover:text-secondary"
+          >Trang chủ</a
+        >
+        <a href="#products" class="block py-2 text-primary hover:text-secondary"
+          >Bộ sưu tập</a
+        >
+        <a href="#about" class="block py-2 text-primary hover:text-secondary"
+          >Về chúng tôi</a
+        >
+        <a href="#contact" class="block py-2 text-primary hover:text-secondary"
+          >Liên hệ</a
+        >
+        <a
+          href="gioithieu.html"
+          class="block py-2 text-primary hover:text-secondary"
+          >Giới thiệu chi tiết</a
+        >
+        <a
+          href="tintuc.html"
+          class="block py-2 text-primary hover:text-secondary"
+          >Tin tức</a
+        >
+        <a
+          href="qrxacthuc.html"
+          class="block py-2 text-primary hover:text-secondary"
+          >QR xác thực</a
+        >
+        <a
+          href="admin.html"
+          class="block py-2 text-primary hover:text-secondary"
+          >Quản trị</a
+        >
+      </div>
+    </header>
+
+    <main>
+      <section
+        id="home"
+        class="relative min-h-screen flex items-center justify-center text-center bg-gradient text-white"
+      >
+        <div class="container mx-auto px-4 z-10">
+          <h2
+            class="text-5xl md:text-7xl font-serif font-bold mb-6 animate-float text-shadow"
+          >
+            Vườn Mai Chín Tèo
+          </h2>
+          <p class="text-xl md:text-2xl mb-12 max-w-3xl mx-auto">
+            Khám phá vẻ đẹp tinh tế và sự quý phái của những cây mai vàng độc
+            đáo, được chăm sóc tỉ mỉ bởi những nghệ nhân hàng đầu.
+          </p>
+          <a
+            href="#products"
+            class="bg-accent text-primary px-8 py-4 rounded-full text-lg font-semibold hover:bg-opacity-90 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+            >Khám phá bộ sưu tập</a
+          >
+        </div>
+        <div class="absolute bottom-0 left-0 w-full">
+          <div class="custom-shape-divider-bottom-1635688644">
+            <svg
+              data-name="Layer 1"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 1200 120"
+              preserveAspectRatio="none"
+            >
+              <path
+                d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                class="shape-fill"
+              ></path>
+            </svg>
+          </div>
+        </div>
+        <div
+          class="scroll-indicator absolute bottom-0 left-0 w-full h-24"
+        ></div>
+      </section>
+
+      <section id="products" class="py-24 bg-white">
+        <div class="container mx-auto px-4">
+          <h2
+            class="text-4xl md:text-5xl font-serif font-bold text-center text-primary mb-16"
+          >
+            Bộ sưu tập độc đáo
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+            <div
+              class="bg-white rounded-lg overflow-hidden shadow-lg hover-grow"
+            >
+              <img
+                src="https://placekitten.com/800/600"
+                alt="Mai vàng Hoàng Gia"
+                class="w-full h-64 object-cover"
+              />
+              <div class="p-6">
+                <h3 class="text-2xl font-serif font-semibold text-primary mb-3">
+                  Mai vàng Hoàng Gia
+                </h3>
+                <p class="text-gray-600 mb-6">
+                  Cây mai độc đáo với hoa 5 cánh, thân sù sì đẹp mắt, tượng
+                  trưng cho sự cao quý và thịnh vượng.
+                </p>
+                <a
+                  href="#"
+                  class="inline-block bg-secondary text-white px-6 py-3 rounded-full hover:bg-opacity-90 transition-all duration-200 shadow-md hover:shadow-lg"
+                  >Xem chi tiết</a
+                >
+              </div>
+            </div>
+            <div
+              class="bg-white rounded-lg overflow-hidden shadow-lg hover-grow"
+            >
+              <img
+                src="https://placekitten.com/801/600"
+                alt="Mai cổ thụ Bách Niên"
+                class="w-full h-64 object-cover"
+              />
+              <div class="p-6">
+                <h3 class="text-2xl font-serif font-semibold text-primary mb-3">
+                  Mai cổ thụ Bách Niên
+                </h3>
+                <p class="text-gray-600 mb-6">
+                  Mai cổ thụ trăm năm tuổi, tán rộng, hoa nở rực rỡ, mang đến
+                  may mắn và phúc lộc cho gia chủ.
+                </p>
+                <a
+                  href="#"
+                  class="inline-block bg-secondary text-white px-6 py-3 rounded-full hover:bg-opacity-90 transition-all duration-200 shadow-md hover:shadow-lg"
+                  >Xem chi tiết</a
+                >
+              </div>
+            </div>
+            <div
+              class="bg-white rounded-lg overflow-hidden shadow-lg hover-grow"
+            >
+              <img
+                src="https://placekitten.com/802/600"
+                alt="Mai bonsai Nghệ Thuật"
+                class="w-full h-64 object-cover"
+              />
+              <div class="p-6">
+                <h3 class="text-2xl font-serif font-semibold text-primary mb-3">
+                  Mai bonsai Nghệ Thuật
+                </h3>
+                <p class="text-gray-600 mb-6">
+                  Mai bonsai nghệ thuật, tạo hình độc đáo, phù hợp trang trí
+                  không gian sang trọng và tinh tế.
+                </p>
+                <a
+                  href="#"
+                  class="inline-block bg-secondary text-white px-6 py-3 rounded-full hover:bg-opacity-90 transition-all duration-200 shadow-md hover:shadow-lg"
+                  >Xem chi tiết</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="text-center mt-16">
+            <a
+              href="#"
+              class="inline-block bg-primary text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-opacity-90 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+              >Xem toàn bộ bộ sưu tập</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="py-24 bg-light">
+        <div class="container mx-auto px-4">
+          <div class="flex flex-col lg:flex-row items-center justify-between">
+            <div class="lg:w-1/2 mb-12 lg:mb-0">
+              <img
+                src="https://placekitten.com/1000/800"
+                alt="Vườn Mai Chín Tèo"
+                class="rounded-lg shadow-2xl hover-grow"
+              />
+            </div>
+            <div class="lg:w-1/2 lg:pl-16">
+              <h2
+                class="text-4xl md:text-5xl font-serif font-bold text-primary mb-8"
+              >
+                Về chúng tôi
+              </h2>
+              <p class="text-gray-600 mb-8 text-lg leading-relaxed">
+                Vườn Mai Chín Tèo, với hơn 30 năm kinh nghiệm, là nơi hội tụ của
+                nghệ thuật và tâm huyết trong việc chăm sóc và phát triển những
+                cây mai quý hiếm. Chúng tôi không chỉ cung cấp cây mai, mà còn
+                mang đến những tác phẩm nghệ thuật sống, kết tinh từ sự tỉ mỉ và
+                đam mê của đội ngũ nghệ nhân hàng đầu.
+              </p>
+              <ul class="list-none text-gray-600 mb-8 space-y-4">
+                <li class="flex items-center">
+                  <i class="fas fa-check-circle text-secondary mr-3"></i>
+                  <span>Cung cấp cây mai chất lượng cao, được chứng nhận</span>
+                </li>
+                <li class="flex items-center">
+                  <i class="fas fa-check-circle text-secondary mr-3"></i>
+                  <span>Dịch vụ tư vấn chuyên sâu về nghệ thuật bonsai</span>
+                </li>
+                <li class="flex items-center">
+                  <i class="fas fa-check-circle text-secondary mr-3"></i>
+                  <span>Chăm sóc và bảo dưỡng cây trọn đời</span>
+                </li>
+                <li class="flex items-center">
+                  <i class="fas fa-check-circle text-secondary mr-3"></i>
+                  <span>Nghiên cứu và phát triển giống mai độc quyền</span>
+                </li>
+              </ul>
+              <a
+                href="#"
+                class="inline-block bg-secondary text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-opacity-90 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                >Khám phá câu chuyện của chúng tôi</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="testimonials" class="py-24 bg-gradient text-white">
+        <div class="container mx-auto px-4">
+          <h2
+            class="text-4xl md:text-5xl font-serif font-bold text-center mb-16"
+          >
+            Khách hàng nói gì về chúng tôi
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+            <div
+              class="bg-white bg-opacity-10 p-8 rounded-lg backdrop-filter backdrop-blur-lg"
+            >
+              <p class="text-lg mb-6">
+                "Cây mai tôi mua từ Vườn Mai Chín Tèo không chỉ đẹp mà còn mang
+                lại may mắn cho gia đình tôi. Dịch vụ chăm sóc tận tình, chuyên
+                nghiệp."
+              </p>
+              <div class="flex items-center">
+                <img
+                  src="https://placekitten.com/100/100"
+                  alt="Khách hàng"
+                  class="w-12 h-12 rounded-full mr-4"
+                />
+                <div>
+                  <h4 class="font-semibold">Nguyễn Văn A</h4>
+                  <p class="text-sm text-gray-300">Doanh nhân</p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="bg-white bg-opacity-10 p-8 rounded-lg backdrop-filter backdrop-blur-lg"
+            >
+              <p class="text-lg mb-6">
+                "Đội ngũ chuyên gia tại Vườn Mai Chín Tèo thực sự am hiểu về cây
+                mai. Họ đã giúp tôi chọn được cây mai hoàn hảo cho không gian
+                sống của mình."
+              </p>
+              <div class="flex items-center">
+                <img
+                  src="https://placekitten.com/101/101"
+                  alt="Khách hàng"
+                  class="w-12 h-12 rounded-full mr-4"
+                />
+                <div>
+                  <h4 class="font-semibold">Trần Thị B</h4>
+                  <p class="text-sm text-gray-300">Kiến trúc sư</p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="bg-white bg-opacity-10 p-8 rounded-lg backdrop-filter backdrop-blur-lg"
+            >
+              <p class="text-lg mb-6">
+                "Chất lượng cây mai tại đây vượt xa mong đợi của tôi. Sự tận tâm
+                trong việc chăm sóc và tư vấn khiến tôi trở thành khách hàng
+                trung thành."
+              </p>
+              <div class="flex items-center">
+                <img
+                  src="https://placekitten.com/102/102"
+                  alt="Khách hàng"
+                  class="w-12 h-12 rounded-full mr-4"
+                />
+                <div>
+                  <h4 class="font-semibold">Lê Văn C</h4>
+                  <p class="text-sm text-gray-300">Nghệ nhân bonsai</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="py-24 bg-light">
+        <div class="container mx-auto px-4">
+          <h2
+            class="text-4xl md:text-5xl font-serif font-bold text-center text-primary mb-16"
+          >
+            Liên hệ với chúng tôi
+          </h2>
+          <div class="flex flex-col lg:flex-row justify-between items-start">
+            <div class="lg:w-1/2 mb-12 lg:mb-0">
+              <h3 class="text-3xl font-serif font-semibold text-primary mb-6">
+                Thông tin liên hệ
+              </h3>
+              <p class="mb-4 text-lg flex items-center">
+                <i
+                  class="fas fa-map-marker-alt text-secondary mr-3 text-2xl"
+                ></i>
+                <span>123 Đường Mai Vàng, Phường Hoa Xuân, TP. Đà Nẵng</span>
+              </p>
+              <p class="mb-4 text-lg flex items-center">
+                <i class="fas fa-phone text-secondary mr-3 text-2xl"></i>
+                <span>0123 456 789</span>
+              </p>
+              <p class="mb-8 text-lg flex items-center">
+                <i class="fas fa-envelope text-secondary mr-3 text-2xl"></i>
+                <span>info@vuonmaichinteo.com</span>
+              </p>
+              <div class="mb-12">
+                <h4 class="text-2xl font-serif font-semibold text-primary mb-4">
+                  Kết nối với chúng tôi
+                </h4>
+                <div class="flex space-x-6">
+                  <a
+                    href="#"
+                    class="text-3xl text-secondary hover:text-accent transition-colors duration-200"
+                    ><i class="fab fa-facebook"></i
+                  ></a>
+                  <a
+                    href="#"
+                    class="text-3xl text-secondary hover:text-accent transition-colors duration-200"
+                    ><i class="fab fa-instagram"></i
+                  ></a>
+                  <a
+                    href="#"
+                    class="text-3xl text-secondary hover:text-accent transition-colors duration-200"
+                    ><i class="fab fa-youtube"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+            <div class="lg:w-1/2">
+              <form class="bg-white p-8 rounded-lg shadow-2xl">
+                <div class="mb-6">
+                  <label
+                    for="name"
+                    class="block text-gray-700 font-semibold mb-2"
+                    >Họ và tên</label
+                  >
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    class="w-full px-4 py-3 rounded-md bg-gray-100 border-transparent focus:border-secondary focus:bg-white focus:ring-0"
+                    required
+                  />
+                </div>
+                <div class="mb-6">
+                  <label
+                    for="email"
+                    class="block text-gray-700 font-semibold mb-2"
+                    >Email</label
+                  >
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    class="w-full px-4 py-3 rounded-md bg-gray-100 border-transparent focus:border-secondary focus:bg-white focus:ring-0"
+                    required
+                  />
+                </div>
+                <div class="mb-6">
+                  <label
+                    for="message"
+                    class="block text-gray-700 font-semibold mb-2"
+                    >Tin nhắn</label
+                  >
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="4"
+                    class="w-full px-4 py-3 rounded-md bg-gray-100 border-transparent focus:border-secondary focus:bg-white focus:ring-0"
+                    required
+                  ></textarea>
+                </div>
+                <button
+                  type="submit"
+                  class="w-full bg-secondary text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-opacity-90 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                >
+                  Gửi tin nhắn
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-primary text-white py-12">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-wrap justify-between">
+          <div class="w-full md:w-1/4 mb-8 md:mb-0">
+            <h3 class="text-2xl font-serif font-semibold mb-6">
+              Vườn Mai Chín Tèo
+            </h3>
+            <p class="text-gray-400 mb-6">
+              Chuyên cung cấp các loại mai vàng cao cấp, đảm bảo uy tín và chất
+              lượng hàng đầu Việt Nam.
+            </p>
+            <div class="flex space-x-4">
+              <a
+                href="#"
+                class="text-gray-400 hover:text-white transition-colors duration-200"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a
+                href="#"
+                class="text-gray-400 hover:text-white transition-colors duration-200"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a
+                href="#"
+                class="text-gray-400 hover:text-white transition-colors duration-200"
+                ><i class="fab fa-youtube"></i
+              ></a>
+            </div>
+          </div>
+          <div class="w-full md:w-1/4 mb-8 md:mb-0">
+            <h3 class="text-xl font-semibold mb-6">Liên kết nhanh</h3>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="#home"
+                  class="text-gray-400 hover:text-white transition-colors duration-200"
+                  >Trang chủ</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#products"
+                  class="text-gray-400 hover:text-white transition-colors duration-200"
+                  >Bộ sưu tập</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#about"
+                  class="text-gray-400 hover:text-white transition-colors duration-200"
+                  >Về chúng tôi</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#contact"
+                  class="text-gray-400 hover:text-white transition-colors duration-200"
+                  >Liên hệ</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="w-full md:w-1/4 mb-8 md:mb-0">
+            <h3 class="text-xl font-semibold mb-6">Chính sách</h3>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors duration-200"
+                  >Chính sách bảo hành</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors duration-200"
+                  >Chính sách đổi trả</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors duration-200"
+                  >Chính sách bảo mật</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors duration-200"
+                  >Điều khoản sử dụng</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="w-full md:w-1/4">
+            <h3 class="text-xl font-semibold mb-6">Đăng ký nhận tin</h3>
+            <p class="text-gray-400 mb-4">
+              Nhận thông tin mới nhất về sản phẩm và khuyến mãi
+            </p>
+            <form class="flex">
+              <input
+                type="email"
+                placeholder="Email của bạn"
+                class="w-full px-4 py-2 rounded-l-md bg-gray-800 border-gray-700 text-white focus:outline-none focus:border-secondary"
+              />
+              <button
+                type="submit"
+                class="bg-secondary text-white px-4 py-2 rounded-r-md hover:bg-opacity-90 transition-colors duration-200"
+              >
+                Đăng ký
+              </button>
+            </form>
+          </div>
+        </div>
+        <div class="mt-12 pt-8 border-t border-gray-800 text-center">
+          <p class="text-gray-400">
+            &copy; 2023 Vườn Mai Chín Tèo. Tất cả quyền được bảo lưu.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile menu toggle
+      const menuToggle = document.getElementById("menu-toggle");
+      const mobileMenu = document.getElementById("mobile-menu");
+      menuToggle.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      // Navbar scroll effect
+      const navbar = document.getElementById("navbar");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 100) {
+          navbar.classList.add("bg-white", "shadow-md");
+          navbar.classList.remove("bg-transparent");
+        } else {
+          navbar.classList.remove("bg-white", "shadow-md");
+          navbar.classList.add("bg-transparent");
+        }
+      });
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior: "smooth"
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
